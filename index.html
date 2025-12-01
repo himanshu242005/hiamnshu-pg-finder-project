@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>PG Finder - Find a PG in New City</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1 class="logo">PG Finder</h1>
+      <nav>
+        <a href="#home" class="nav-link">Home</a>
+        <a href="#search" class="nav-link">Search</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="container hero-grid-main">
+        <div>
+          <h2>New city? Find a safe and affordable PG in minutes</h2>
+          <p>Search PGs by city, locality, rent, and preferences. UI-only prototype built with HTML/CSS/JS.</p>
+          <a class="btn" href="#search" id="startSearch">Start Searching</a>
+        </div>
+        <div class="hero-image">
+          <img src="img/19198818.jpg" class="img" style="mix-blend-mode: darken;" alt="Illustration of people searching for PG accommodations" />
+        </div>
+      </div>
+    </section>
+    <section id="home-2" class="hero-2">
+      <div class="container hero-grid">
+         <div class="hero-image">
+          <img src="img/4315928.jpg" class="img" alt="Illustration of people searching for PG accommodations" />
+        </div>
+        <div class="hero-card">
+          <form id="quick-search" onsubmit="return false;">
+            <label>City</label>
+            <input id="qs-city" placeholder="e.g. Jaipur" />
+            <label>Budget (max ₹)</label>
+            <input id="qs-budget" type="number" placeholder="10000" />
+            <label>Type</label>
+            <select id="qs-type">
+              <option value="">Any</option>
+              <option>Female-only</option>
+              <option>Male-only</option>
+              <option>Co-living</option>
+            </select>
+            <button class="btn" id="qs-btn">Search</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section id="search" class="section container">
+      <h2>Search PGs</h2>
+      <div class="search-controls">
+        <input id="search-input" placeholder="Search by city, locality or PG name" />
+        <select id="sort-by">
+          <option value="relevance">Sort: Relevance</option>
+          <option value="low-high">Rent: Low to High</option>
+          <option value="high-low">Rent: High to Low</option>
+        </select>
+      </div>
+
+      <div id="results" class="results-grid">
+        <!-- JS will inject listing cards here -->
+      </div>
+    </section>
+
+    <section id="about" class="section container">
+      <h2>About PG Finder</h2>
+      <p>This is a frontend-only prototype to help students and corporate employees find paying-guest (PG) accommodations in a new city. Data shown is mock data for demo purposes.</p>
+      <ul>
+        <li>Responsive layout</li>
+        <li>Filter & search</li>
+        <li>Listing and detail modal</li>
+      </ul>
+    </section>
+
+    <section id="contact" class="section container">
+      <h2>Contact / Feedback</h2>
+      <form id="contact-form" onsubmit="return false;">
+        <input id="name" placeholder="Your name" />
+        <input id="email" placeholder="Your email" />
+        <textarea id="message" placeholder="Message or feedback"></textarea>
+        <button class="btn">Send Message</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>PG Finder — Prototype UI. No backend included.</p>
+      <p>&copy; PG Finder</p>
+    </div>
+  </footer>
+
+  <!-- Detail Modal -->
+  <div id="detail-modal" class="modal hidden" role="dialog" aria-hidden="true">
+    <div class="modal-content">
+      <button id="modal-close" class="modal-close">✕</button>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
